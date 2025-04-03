@@ -1,5 +1,5 @@
 var list = ["apple", "pear", "peach"]; // list of elements
-list[0] // accessing an element by id
+list[2] // accessing an element by id
 list.indexOf("pear") // checking the index of "pear" in the array
 list.push("banana"); // Adding a new element
 list.pop() // Taking the last element from the array
