@@ -6,7 +6,7 @@ list.pop() // Taking the last element from the array
 list.shift() // Taking the first element
 list.length // checking the number of elements
 // list.slice(start, end) // copy a subportion of the original array
-list.join('separator') // return string by concatening elements
+list.join(' ') // return string by concatening elements
 
 // list.forEach( console.log ) // array methods
 list.forEach( v => console.log(v) )

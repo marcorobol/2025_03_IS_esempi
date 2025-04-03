@@ -19,7 +19,7 @@ const mod = ( a, b ) => { // Arrow Function (+args +instructions)
 
 var pow2 = a => a * a // Arrow Function (1arg 1instruction, no return needed)
 
-console.log( add('s',2) );
+console.log( add('ss',2) );
 console.log( mult(2,3) );
 console.log( mod(3,2) );
 console.log( pow2(3) );
