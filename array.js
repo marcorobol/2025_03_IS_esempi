@@ -11,3 +11,5 @@ list.join('separator') // return string by concatening elements
 // list.forEach( console.log ) // array methods
 list.forEach( v => console.log(v) )
 console.log( list.join(', ') );
+
+// modifica
