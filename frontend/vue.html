@@ -1,0 +1,68 @@
+
+<!DOCTYPE html> <!-- HTML5 document -->
+<html> <!-- Root element -->
+    <head>
+        <!-- <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" /> -->
+    </head>
+
+    <body>         
+        <div id="app">
+            
+            <h1 :class="titleClass">{{ message }}</h1>
+            
+            <button @click="count++"> Count is: {{ count }} </button>
+            <br/>
+            
+            <input :value="text" @input="onInput">
+            <p>{{ text }}</p>
+
+            <input v-model="text" placeholder="Type here">
+
+            <h1 v-if="awesome">Vue is awesome!</h1>
+            <h1 v-else>Oh no </h1>
+
+            <button class="btn" @click="awesome=!awesome"> Awesome is: {{ awesome }} </button>
+
+            <ul>
+                <li v-for="todo in todos" :key="todo.id">
+                {{ todo.text }}
+                </li>
+            </ul>
+            <button class="btn" @click="todos.push({id:id++,text:'Item'})"> Add item </button>
+
+
+        </div>
+
+        <script type="module">
+            import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+            
+            createApp({ // will later replace setup()
+                setup() { // with the <script setup> syntax
+                    const message = ref('Hello Vue!');
+                    const count = ref(0);
+
+                    const titleClass = ref('text-red-500');
+
+                    const text = ref('');
+                    function onInput(e) { // a v-on handler receives the native DOM event as argument
+                        text.value = e.target.value
+                    };
+
+                    const awesome = ref(false);
+
+                    let id = 0;
+                    const todos = ref([
+                        { id: id++, text: 'Learn HTML' },
+                        { id: id++, text: 'Learn JavaScript' },
+                        { id: id++, text: 'Learn Vue' }
+                    ])
+
+                    return { message, count, titleClass, text, onInput, awesome, id, todos };
+                }
+            }).mount('#app')
+            
+            </script>
+    </body>
+
+</html>
